@@ -1,0 +1,145 @@
+# =============================================================================
+# Emotion Recognition (ER) — .gitignore
+# Ship: extractors + multimodal_classifier + format docs + env specs.
+# Do not ship: raw data, features, scrapers, MTG, legacy one-offs.
+# =============================================================================
+
+# --- OS / editor / Python ---
+.DS_Store
+.AppleDouble
+.LSOverride
+.cursor/
+.cursorignore
+.vscode/
+.idea/
+__pycache__/
+*.py[cod]
+*$py.class
+*.egg-info/
+er.egg-info/
+.eggs/
+dist/
+build/
+*.egg
+.ipynb_checkpoints/
+
+# --- Secrets / local env ---
+.env
+.env.*
+!.env.example
+
+# --- Runtime outputs & experiment tracking ---
+wandb/
+**/wandb/
+outputs/
+**/outputs/
+*.log
+hs-*.log
+
+# --- Large / local data ---
+raw_data/
+
+# Precomputed embeddings / features / checkpoints
+*.pt
+*.pk
+*.pkl
+*.npy
+*.npz
+*.h5
+*.ckpt
+*.pth
+*.bin
+*.onnx
+
+# Media
+*.mp4
+*.mov
+*.avi
+*.mkv
+*.flv
+*.wav
+*.mp3
+*.flac
+*.ogg
+*.m4a
+*.webm
+
+# Archives
+*.zip
+*.tar
+*.tar.gz
+*.tgz
+*.7z
+
+# Local dumps / notebooks / ad-hoc results (keep code; drop data-shaped files)
+*.csv
+*.json
+*.ipynb
+# Local YAML configs (VER/environment.yml uses .yml and is tracked)
+*.yaml
+
+# Shipped song-disjoint partition tables (exception to *.csv)
+!partitions/
+!partitions/**/
+!partitions/**/*.csv
+!partitions/**/*.txt
+!partitions/**/*.md
+
+# --- Feature dump directories ---
+VER/EmoMV_features*/
+VER/EmoMV_mean_features*/
+VER/EmoMV_moede_features*/
+VER/*_song_disjoint/
+VER/moede_social_features*/
+VER/social_features*/
+VER/crema_quick/
+VER/crema_quick_frame/
+VER/features/
+MER/EmoMV_features/
+MER/features/
+MER/*_song_disjoint/
+MER/outputs/
+MER/models/
+TER/csvs/
+TER/csvs_song_disjoint/
+TER/comment_csvs/
+TER/comment_csvs_song_disjoint/
+TER/comment_features/
+TER/lyrics_csvs/
+TER/lyrics_csvs_song_disjoint/
+TER/EmoMV_lyrics_embeddings/
+TER/outputs/
+TER/models/
+ASR/
+
+# --- Not shipped ---
+Categorical_SER/
+Social_media_predictions/
+Social_media_text_predictions/
+Lyrica/
+Meeting/
+mtg-jamendo-dataset/
+mtg-splits/
+EmoMV/
+docs/
+legacy_oneoffs/
+data_collection/
+download_scripts/
+experiments/
+plans/
+TODO
+PLAN_lr_sweep_experiment_summary.md
+
+# Local analysis / launchers (not shipped)
+scripts/
+jobs/
+moede/
+
+# Cluster / personal launchers
+ASR.sh
+job.sh
+VER/job.sh
+MER/*.sh
+run_lr_sweep.sh
+
+draw.xml

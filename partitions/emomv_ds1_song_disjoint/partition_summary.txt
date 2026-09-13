@@ -1,0 +1,12 @@
+Song/video-disjoint partition (strategy B)
+seed=42 test_frac=0.1 val_frac=0.1
+components=1649 match_clips=2642
+train: match=2116 songs=799 lyrics_ok=936 mood={'exciting': 397, 'fear': 396, 'tense': 314, 'sad': 363, 'relax': 646}
+val: match=263 songs=263 lyrics_ok=109 mood={'exciting': 50, 'fear': 49, 'tense': 39, 'sad': 45, 'relax': 80}
+test: match=263 songs=263 lyrics_ok=116 mood={'exciting': 50, 'fear': 49, 'tense': 39, 'sad': 45, 'relax': 80}
+--- checks ---
+OK video_cross_split=0
+OK song_cross_split=0
+OK test: 263 clips, 263 unique songs
+OK val: 263 clips, 263 unique songs
+mismatch placement: {'train': 1943, 'test': 84, 'val': 245}
